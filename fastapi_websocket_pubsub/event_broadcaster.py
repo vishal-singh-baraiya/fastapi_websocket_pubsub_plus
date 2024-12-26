@@ -245,7 +245,13 @@ class EventBroadcaster:
                 self.listening_broadcast_channel = self._broadcast_type(
                     self._broadcast_url
                 )
-                await self.listening_broadcast_channel.connect()
+                try:
+                    await self.listening_broadcast_channel.connect()
+                except Exception as e:
+                    logger.error(
+                        f"Failed to connect to broadcast channel for reading incoming events: {e}"
+                    )
+                    raise e   
         except Exception as e:
             logger.error(
                 f"Failed to connect to broadcast channel for reading incoming events: {e}"

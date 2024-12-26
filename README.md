@@ -28,7 +28,7 @@ As seen at <a href="https://www.youtube.com/watch?v=KP7tPeKhT3o" target="_blank"
 
 ## Installation 🛠️
 ```
-pip install fastapi_websocket_pubsub
+pip install fastapi_websocket_pubsub_plus
 ```
 
 
@@ -100,7 +100,7 @@ async def trigger_events():
 ```
 ### Client:
 ```python
-from fastapi_websocket_pubsub import PubSubClient
+from fastapi_websocket_pubsub_plus import PubSubClient
 # Callback to be called upon event being published on server
 async def on_trigger(data):
     print("Trigger URL was accessed")
